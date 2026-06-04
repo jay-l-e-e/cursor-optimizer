@@ -1,0 +1,17 @@
+[package]
+name = "application-paths"
+description = "OS-aware path resolution for app data."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[lib]
+name = "application_paths"
+path = "sources/library.rs"
+
+[lints]
+workspace = true

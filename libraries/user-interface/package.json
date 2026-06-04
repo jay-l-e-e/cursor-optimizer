@@ -1,0 +1,17 @@
+{
+  "name": "@cursor-optimizer/user-interface",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared components and IPC layer.",
+  "author": "Jay Lee <jay@vendit.co.kr>",
+  "license": "MIT",
+  "exports": {
+    ".": "./sources/index.ts",
+    "./ipc": "./sources/ipc.ts",
+    "./types": "./sources/types.ts"
+  },
+  "dependencies": {
+    "solid-js": "*"
+  }
+}

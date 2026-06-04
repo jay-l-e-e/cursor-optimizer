@@ -1,0 +1,5 @@
+tab_spaces = 2
+hard_tabs = false
+edition = "2024"
+reorder_imports = true
+reorder_modules = true

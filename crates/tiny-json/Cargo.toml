@@ -1,0 +1,17 @@
+[package]
+name = "tiny-json"
+description = "Zero-dependency JSON parser."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[lib]
+name = "tiny_json"
+path = "sources/library.rs"
+
+[lints]
+workspace = true

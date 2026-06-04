@@ -1,0 +1,34 @@
+{
+  "name": "cursor-optimizer-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Optimizer dashboard UI.",
+  "author": "Jay Lee <jay@vendit.co.kr>",
+  "license": "MIT",
+  "homepage": "https://github.com/jay-l-e-e/cursor-optimizer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jay-l-e-e/cursor-optimizer.git",
+    "directory": "packages/cursor-optimizer/sources/web"
+  },
+  "bugs": {
+    "url": "https://github.com/jay-l-e-e/cursor-optimizer/issues"
+  },
+  "scripts": {
+    "development": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "biome ci",
+    "format": "biome check --write",
+    "typecheck": "tsgo --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@cursor-optimizer/design-system": "*",
+    "@cursor-optimizer/user-interface": "*",
+    "bootstrap-icons": "*",
+    "pretendard": "*",
+    "solid-js": "*"
+  }
+}

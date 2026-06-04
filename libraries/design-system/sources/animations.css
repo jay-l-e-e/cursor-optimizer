@@ -1,0 +1,57 @@
+@keyframes indeterminate {
+  0% {
+    left: -45%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.scan-track {
+  position: relative;
+  overflow: hidden;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--color-subtle);
+}
+
+.scan-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45%;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  animation: indeterminate 1.15s ease-in-out infinite;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-rise {
+  animation: fade-rise 0.22s ease;
+}
+
+.bar-grow {
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.window-drag-region {
+  app-region: drag;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.window-drag-excluded,
+.window-drag-excluded * {
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+}

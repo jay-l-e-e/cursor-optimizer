@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "@cursor-optimizer/design-system/sources/tokens.css";
+@import "@cursor-optimizer/design-system/sources/animations.css";
+
+@source "../../../../../libraries/user-interface/sources";

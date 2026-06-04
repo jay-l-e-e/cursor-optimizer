@@ -1,0 +1,35 @@
+[workspace]
+resolver = "3"
+members = [
+  "packages/cursor-optimizer",
+  "packages/cursor-optimizer-installer",
+  "crates/application-paths",
+  "crates/tiny-json",
+  "crates/curator",
+  "crates/packager",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.96"
+license = "MIT"
+authors = ["Jay Lee <jay@vendit.co.kr>"]
+repository = "https://github.com/jay-l-e-e/cursor-optimizer"
+homepage = "https://github.com/jay-l-e-e/cursor-optimizer"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unused = { level = "deny", priority = -1 }
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"

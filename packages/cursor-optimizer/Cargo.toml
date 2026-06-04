@@ -1,0 +1,32 @@
+[package]
+name = "cursor-optimizer"
+description = "Reclaim gigabytes from Cursor, instantly."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme = "../../README.md"
+keywords = ["cursor", "sqlite", "optimizer", "webview", "cleanup"]
+categories = ["command-line-utilities", "gui"]
+
+[[bin]]
+name = "cursor-optimizer"
+path = "sources/main.rs"
+
+[dependencies]
+application-paths = { path = "../../crates/application-paths" }
+curator = { path = "../../crates/curator" }
+tiny-json = { path = "../../crates/tiny-json" }
+wry = "0.55"
+tao = "0.35"
+command-group = "5.0.1"
+png = "0.18.0"
+
+[target.'cfg(windows)'.build-dependencies]
+winresource = "0.1.23"
+
+[lints]
+workspace = true

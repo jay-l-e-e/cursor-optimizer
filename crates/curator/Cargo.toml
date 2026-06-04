@@ -1,0 +1,21 @@
+[package]
+name = "curator"
+description = "Storage engine for Cursor database inspection and optimization."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+
+[lib]
+path = "sources/library.rs"
+
+[dependencies]
+tiny-json = { path = "../tiny-json" }
+rusqlite = { version = "0.40", features = ["bundled"] }
+zstd = "0.13.3"
+
+[lints]
+workspace = true

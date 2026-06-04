@@ -1,0 +1,13 @@
+{
+  "name": "@cursor-optimizer/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Design tokens and base styles.",
+  "author": "Jay Lee <jay@vendit.co.kr>",
+  "license": "MIT",
+  "exports": {
+    "./tokens.css": "./sources/tokens.css",
+    "./animations.css": "./sources/animations.css"
+  }
+}

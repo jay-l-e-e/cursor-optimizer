@@ -1,0 +1,20 @@
+---
+description: Mandatory project baseline; AGENTS.md is the single source of truth.
+alwaysApply: true
+---
+
+# Project Baseline (mandatory)
+
+`AGENTS.md` at the repository root is the single source of truth. Read it in full and obey every rule. The most-violated points:
+
+- NEVER abbreviate names — identifiers, files, directories: `index` not `i`, `sources` not `src`, `library` not `lib`. Only tool-mandated filenames are exempt.
+- NEVER write code comments. Indent with 2 spaces everywhere, including Rust.
+- NEVER use panic-prone or unsafe Rust in non-test code (`unwrap`, `expect`, `panic!`, `unsafe`, panicking indexing/arithmetic). Use `Result`/`Option` and checked/saturating math.
+- Zero warnings everywhere: `cargo clippy --all-targets -- --deny warnings`, `cargo fmt --check`, Biome `biome ci`, and `tsgo --noEmit` must all pass clean.
+- TypeScript: NEVER use `any`, `as` casts (except a genuinely-unknown external boundary like `JSON.parse`), or non-null `!`.
+- Tests are mandatory for every area (Rust `cargo test` + frontend Vitest); imports are ordered by rustfmt and Biome organizeImports.
+- Minimal dependencies; build small things in-house under `crates/`. Every file and line must justify itself.
+- Fixed stack: wry + tao, Solid + Vite + TypeScript, rusqlite, latest stable Rust. No Tauri/Electron.
+- Self-contained: embed all assets, never fetch at runtime; the webview data directory lives in OS app-data, not beside the executable.
+- Match cursor.com design (warm light, accent `#f54e00`, pill buttons, Pretendard). Never expose internal/developer text. Reads are never blocked; only writes are blocked while Cursor runs.
+- Produce artifacts with `cargo bundle` into `artifacts/`. MIT © Jay Lee <jay@vendit.co.kr>; keep `THIRD-PARTY-NOTICES.md`/`deny.toml` accurate and `cargo-deny` passing.

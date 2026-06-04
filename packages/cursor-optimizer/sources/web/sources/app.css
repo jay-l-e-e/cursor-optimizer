@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@source "../../../../../libraries/user-interface/sources";
+
+@theme {
+  --color-canvas: #f7f7f4;
+  --color-surface: #ffffff;
+  --color-subtle: #efece6;
+  --color-ink: #26251e;
+  --color-muted: #6f6d63;
+  --color-faint: #9a978c;
+  --color-line: #e4e1d8;
+  --color-accent: #f54e00;
+  --color-accent-strong: #d94400;
+  --color-accent-soft: #ffe9df;
+  --color-danger: #cf2d56;
+  --color-ok: #2f7d4f;
+  --color-peach: #f6c8a8;
+  --color-mint: #b9e3cd;
+  --color-sky: #b9cdf6;
+  --color-lavender: #d2c4f5;
+  --color-gold: #ecd79a;
+  --font-sans: "Pretendard Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+@keyframes indeterminate {
+  0% {
+    left: -45%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.scan-track {
+  position: relative;
+  overflow: hidden;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--color-subtle);
+}
+
+.scan-bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45%;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  animation: indeterminate 1.15s ease-in-out infinite;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-rise {
+  animation: fade-rise 0.22s ease;
+}
+
+.bar-grow {
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes status-bar-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.status-bar-appear {
+  animation: status-bar-appear 0.12s ease;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+    width: 40%;
+  }
+  50% {
+    width: 60%;
+  }
+  100% {
+    transform: translateX(250%);
+    width: 40%;
+  }
+}
+
+.window-drag-region {
+  app-region: drag;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.window-drag-excluded,
+.window-drag-excluded * {
+  app-region: no-drag;
+  -webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ddd9cf;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cdc8ba;
+}
